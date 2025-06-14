@@ -7,57 +7,60 @@ const Hero = () => {
     <motion.section
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 0.8 }}
-      className="hero relative overflow-hidden"
+      transition={{ duration: 1, ease: "easeInOut" }}
+      className="hero relative h-screen flex items-center justify-center text-center overflow-hidden"
+      style={{ backgroundImage: 'url(https://source.unsplash.com/random/1600x900/?technology)' }}
     >
-      <div className="absolute inset-0 bg-black opacity-70"></div>
+      <div className="absolute inset-0 bg-black opacity-60"></div>
       <div className="absolute inset-0">
-        {[...Array(50)].map((_, i) => (
+        {[...Array(30)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute bg-ph-red opacity-50 rounded-full"
+            className="absolute bg-ph-red/30 rounded-full"
             style={{
-              width: `${Math.random() * 5 + 2}px`,
-              height: `${Math.random() * 5 + 2}px`,
+              width: `${Math.random() * 10 + 5}px`,
+              height: `${Math.random() * 10 + 5}px`,
               left: `${Math.random() * 100}vw`,
               top: `${Math.random() * 100}vh`,
             }}
             animate={{
-              y: [0, Math.random() * 50 - 25],
-              x: [0, Math.random() * 50 - 25],
+              y: [0, Math.random() * 100 - 50],
+              x: [0, Math.random() * 100 - 50],
             }}
             transition={{
-              duration: Math.random() * 5 + 5,
+              duration: Math.random() * 10 + 10,
               repeat: Infinity,
-              repeatType: 'reverse',
+              repeatType: "reverse",
             }}
           />
         ))}
       </div>
-      <div className="relative container mx-auto px-4 text-center z-10">
+      <div className="relative z-10 px-6">
         <motion.h1
           initial={{ y: 50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.3, duration: 0.6 }}
-          className="text-5xl md:text-6xl font-bold mb-4 text-ph-red"
+          transition={{ delay: 0.2, duration: 0.8 }}
+          className="text-5xl md:text-6xl font-bold text-ph-red mb-6 leading-tight"
         >
           Welcome to ProjectHub
         </motion.h1>
         <motion.p
           initial={{ y: 50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.4, duration: 0.6 }}
-          className="text-xl md:text-2xl mb-8 text-ph-gray"
+          transition={{ delay: 0.4, duration: 0.8 }}
+          className="text-xl md:text-2xl text-ph-gray mb-10 max-w-2xl mx-auto"
         >
           Revolutionizing software development and AI services with cutting-edge solutions
         </motion.p>
         <motion.div
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
+          className="inline-block"
         >
           <Link
             to="/marketplace"
-            className="bg-ph-red text-ph-white px-8 py-4 rounded-full font-semibold hover:bg-red-600"
+            className="bg-ph-red text-ph-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-ph-red focus:ring-offset-2 focus:ring-offset-ph-dark"
+            aria-label="Explore projects"
           >
             Explore Projects
           </Link>

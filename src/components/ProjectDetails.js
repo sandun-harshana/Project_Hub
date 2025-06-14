@@ -13,7 +13,8 @@ const ProjectDetails = () => {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        className="container mx-auto px-4 py-12 text-center"
+        transition={{ duration: 0.6 }}
+        className="container mx-auto px-6 py-16 text-center"
       >
         <h2 className="text-2xl font-bold text-ph-white">Project Not Found</h2>
       </motion.div>
@@ -24,20 +25,21 @@ const ProjectDetails = () => {
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 0.6 }}
-      className="container mx-auto px-4 py-12"
+      transition={{ duration: 0.8 }}
+      className="container mx-auto px-6 py-16"
     >
       <img
         src={project.image}
         alt={project.title}
-        className="w-full h-96 object-cover rounded-lg mb-6"
+        className="w-full h-96 object-cover rounded-lg mb-8"
+        loading="lazy"
       />
-      <h2 className="text-3xl font-bold mb-4 text-ph-white">{project.title}</h2>
-      <div className="project-details">
-        <p className="text-ph-gray mb-4">{project.description}</p>
+      <h2 className="text-4xl font-bold text-ph-white mb-6">{project.title}</h2>
+      <div className="project-details bg-ph-light p-6 rounded-lg border border-ph-light-gray">
+        <p className="text-lg text-ph-gray mb-4">{project.description}</p>
         <p className="text-sm text-ph-gray mb-2">Category: {project.category}</p>
         <p className="text-sm text-ph-gray mb-2">Creator: {project.creator}</p>
-        <p className="text-sm text-ph-gray">Created: {project.createdAt}</p>
+        <p className="text-sm text-ph-gray mb-2">Created: {project.createdAt}</p>
         {project.rating && <p className="text-sm text-ph-gray">Rating: {project.rating.toFixed(1)}/5</p>}
       </div>
     </motion.div>

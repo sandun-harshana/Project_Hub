@@ -4,56 +4,10 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  body {
-    @apply bg-ph-dark text-ph-white font-poppins m-0 p-0;
-  }
-  .header {
-    @apply bg-ph-dark p-4 flex justify-between items-center shadow-md fixed w-full z-50;
-  }
-  .header nav ul {
-    @apply list-none m-0 p-0 flex;
-  }
-  .header nav ul li {
-    @apply mr-5;
-  }
-  .header nav a {
-    @apply text-ph-white no-underline transition-colors duration-200 ease-in-out;
-  }
-  .header nav a:hover {
-    @apply text-ph-red;
-  }
-  .hero {
-    @apply bg-gradient-to-b from-ph-dark to-[#333] p-20 text-center;
-  }
-  .hero h1 {
-    @apply text-5xl mb-4;
-  }
-  .hero p {
-    @apply text-xl mb-8;
-  }
-  .hero button {
-    @apply bg-ph-red text-ph-white border-none p-4 px-8 text-xl cursor-pointer rounded-full hover:bg-red-600;
-  }
-  .project-marketplace {
-    @apply p-20;
-  }
-  .project-grid {
-    @apply grid grid-cols-3 gap-5;
-  }
-  .project-card {
-    @apply bg-ph-light p-8 border border-ph-light-gray rounded-lg shadow-md;
-  }
-  .project-card h3 {
-    @apply text-2xl mb-4;
-  }
-  .project-card p {
-    @apply text-lg mb-8;
-  }
-  .project-card button {
-    @apply bg-ph-red text-ph-white border-none p-4 px-8 text-lg cursor-pointer rounded hover:bg-red-600;
-  }
-  .project-details {
-    @apply mt-4 p-4 border-t border-ph-light-gray;
-  }
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #1A1A1A;
+  color: #FFFFFF;
 }
